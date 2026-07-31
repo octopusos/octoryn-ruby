@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "vendor/**/*"
+
+Metrics/MethodLength:
+  Max: 45
+
+Metrics/ClassLength:
+  Max: 260
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/ParameterLists:
+  Max: 8
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - "spec/**/*"
