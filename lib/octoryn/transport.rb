@@ -22,8 +22,8 @@ module Octoryn
       request['Authorization'] = "Bearer #{@api_key}"
       request['Content-Type'] = 'application/json'
       request['Accept'] = stream ? 'text/event-stream' : 'application/json'
-      request['User-Agent'] = 'octoryn-ruby/0.1.0'
-      request['X-Octoryn-Sdk'] = 'ruby/0.1.0'
+      request['User-Agent'] = 'octoryn-ruby/0.1.1'
+      request['X-Octoryn-Sdk'] = 'ruby/0.1.1'
       request.body = JSON.generate(payload)
 
       Net::HTTP.start(
