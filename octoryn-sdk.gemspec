@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE']
   spec.require_paths = ['lib']
   spec.metadata = {
-    'source_code_uri' => 'https://github.com/octopusos/octoryn-ruby',
+    'source_code_uri' => 'https://github.com/octoryn/octoryn-ruby',
     'documentation_uri' => 'https://octoryn.dev/docs',
     'rubygems_mfa_required' => 'true'
   }
