@@ -26,7 +26,9 @@ RSpec.describe Octoryn::Client do
   end
 
   def fixture(name)
-    File.read(File.expand_path("../../sdk-conformance/v1/#{name}", __dir__))
+    monorepo_path = File.expand_path("../../sdk-conformance/v1/#{name}", __dir__)
+    mirror_path = File.expand_path("../sdk-conformance/v1/#{name}", __dir__)
+    File.read(File.exist?(monorepo_path) ? monorepo_path : mirror_path)
   end
 
   def client(*responses)
@@ -69,6 +71,7 @@ RSpec.describe Octoryn::Client do
     expect(result.octoryn.region).to eq('au-sydney')
     expect(result.octoryn.estimated_cost).to eq(0.001)
     expect(transport.requests.first[:payload]['model']).to eq('policy/frontier')
+    expect(transport.requests.first[:path]).to eq('chat/completions')
   end
 
   it 'validates structured output against JSON Schema' do

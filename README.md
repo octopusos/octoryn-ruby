@@ -11,7 +11,7 @@ gem install octoryn-sdk -v 0.1.1
 ```ruby
 client = Octoryn::Client.new(api_key: ENV.fetch("OCTORYN_API_KEY"))
 result = client.generate_text(
-  model: "policy/au-enterprise",
+  model: "openai/gpt-4.1-mini",
   prompt: "Explain this routing decision."
 )
 
